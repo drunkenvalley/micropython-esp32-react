@@ -1,0 +1,8 @@
+@use "sass:color"
+
+@mixin color-variants ($name, $color)
+    --#{$name}: #{$color}
+    @for $i from 1 through 9
+        $num: $i*100
+        $val: (4-$i)*5
+        --#{$name}-#{$num}: #{color.adjust($color, $lightness: $val * 1%)}
